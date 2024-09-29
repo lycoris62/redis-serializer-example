@@ -45,10 +45,6 @@ public class RedisConfig {
         redisTemplate.setKeySerializer(RedisSerializer.string());
         redisTemplate.setValueSerializer(RedisSerializer.java());
 
-//        redisTemplate.setValueSerializer(RedisSerializer.json());
-
-//        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(Object.class));
-
         // Hash Serializer 설정
         redisTemplate.setHashKeySerializer(RedisSerializer.string());
         redisTemplate.setHashValueSerializer(RedisSerializer.string());

@@ -15,7 +15,6 @@ public class RedisService {
 
     @PostConstruct
     public void init() {
-        log.info("RedisService init");
         Product product = new Product("1", "product1", 100);
         redisUtil.save(product.id(), product);
     }
