@@ -1,0 +1,4 @@
+rootProject.name = 'redis-cache-multi-module'
+
+include 'application:redis-1'
+include 'application:redis-2'
