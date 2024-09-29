@@ -15,12 +15,14 @@ public class RedisUtil {
     private final ObjectMapper objectMapper;
     private final StringRedisTemplate stringRedisTemplate;
 
-    public <T> void save(String key, T value) {
+    public <T> boolean save(String key, T value) {
         try {
             String json = objectMapper.writeValueAsString(value);
             stringRedisTemplate.opsForValue().set(key, json);
+            return true;
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            log.error("redis save error", e);
+            return false;
         }
     }
 

@@ -17,7 +17,7 @@ public class RedisService {
     public void init() {
         log.info("RedisService init");
 
-        Product product = redisUtil.get("1", Product.class);
+        Product product = redisUtil.get("1", Product.class).orElseThrow();
         log.info("product:{}", product);
     }
 }
